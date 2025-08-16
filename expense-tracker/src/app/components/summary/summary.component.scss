@@ -1,0 +1,14 @@
+.summary {
+  background-color: #a9c7c7;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .summary {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}

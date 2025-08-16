@@ -1,0 +1,46 @@
+<mat-toolbar color="primary"> 💸 Expense Tracker </mat-toolbar>
+
+<div class="app-wrapper">
+  <div class="align-form">
+    <app-expense-form
+      [editingExpense]="editingExpense"
+      (expenseAdded)="addExpense($event)"
+    >
+    </app-expense-form>
+  </div>
+
+  <app-expense-chart [expenses]="filteredExpenses()"></app-expense-chart>
+
+  <!-- <app-summary [expenses]="filteredExpenses()"></app-summary> -->
+
+  <mat-card class="filter-card">
+    <div class="filters">
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label>Category</mat-label>
+        <mat-select [(value)]="selectedCategory">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category">
+            {{ category }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="filter-field">
+        <mat-label>Month</mat-label>
+        <mat-select [(value)]="selectedMonth">
+          <mat-option value="">All</mat-option>
+          <mat-option *ngFor="let month of months" [value]="month">
+            {{ month }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </mat-card>
+
+  <app-expense-list
+    [expenses]="filteredExpenses()"
+    (deleteExpense)="deleteExpense($event)"
+    (editExpense)="editExpense($event)"
+  >
+  </app-expense-list>
+</div>

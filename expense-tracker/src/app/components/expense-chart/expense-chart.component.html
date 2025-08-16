@@ -1,0 +1,13 @@
+<div class="chart-container" *ngIf="chartData.datasets[0].data.length">
+  <h2>Expenses by Category</h2>
+  <canvas
+    baseChart
+    [data]="chartData"
+    [type]="chartType"
+    [options]="chartOptions"
+  >
+  </canvas>
+</div>
+<div *ngIf="!chartData.datasets[0].data.length">
+  <p>No data to display</p>
+</div>

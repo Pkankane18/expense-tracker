@@ -1,0 +1,49 @@
+<mat-card>
+  <h2>Add New Expense</h2>
+  <form (ngSubmit)="onSubmit()" #expenseForm="ngForm">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="expense.title" name="title" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Amount</mat-label>
+      <input
+        matInput
+        type="number"
+        [(ngModel)]="expense.amount"
+        name="amount"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="expense.category" name="category" required>
+        <mat-option value="Food">Food</mat-option>
+        <mat-option value="Transport">Transport</mat-option>
+        <mat-option value="Shopping">Shopping</mat-option>
+        <mat-option value="Utilities">Utilities</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Date</mat-label>
+      <input
+        matInput
+        type="date"
+        [(ngModel)]="expense.date"
+        name="date"
+        required
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!expenseForm.valid"
+    >
+      {{ editingExpense ? "Update Expense" : "Add Expense" }}
+    </button>
+  </form>
+</mat-card>

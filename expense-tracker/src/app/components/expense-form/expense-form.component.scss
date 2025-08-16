@@ -1,0 +1,22 @@
+mat-card {
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+mat-form-field.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  width: auto; // desktop
+}
+
+@media (max-width: 600px) {
+  button {
+    width: 100%; // stack on mobile
+  }
+}

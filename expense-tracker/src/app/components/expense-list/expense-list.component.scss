@@ -1,0 +1,21 @@
+.table-wrapper {
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.full-width-table {
+  width: 70%;
+  min-width: 600px;
+}
+
+.empty-state {
+  margin-top: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
+
+table {
+  background-color:rgb(228, 245, 249);
+}
